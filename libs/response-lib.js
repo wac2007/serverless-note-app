@@ -1,5 +1,5 @@
 export function success(body) {
-  return buildRespones(200, body);
+  return buildResponse(200, body);
 }
 
 export function failure(body) {
@@ -16,4 +16,3 @@ function buildResponse(statusCode, body) {
     body: JSON.stringify(body)
   };
 }
-

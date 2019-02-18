@@ -1,12 +1,9 @@
 import uuid from "uuid";
-import AWS from "aws-sdk";
-
-import * as dynamoDb from './libs/dynamodb-lib';
-import { success, failure } from './libs/response-lib';
+import * as dynamoDbLib from "./libs/dynamodb-lib";
+import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context) {
   const data = JSON.parse(event.body);
-
   const params = {
     TableName: "notes",
     Item: {
@@ -19,10 +16,9 @@ export async function main(event, context) {
   };
 
   try {
-    await dynamoDb.call('put', params);
+    await dynamoDbLib.call("put", params);
     return success(params.Item);
   } catch (e) {
     return failure({ status: false });
   }
-
-}
+};
