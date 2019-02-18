@@ -38,7 +38,7 @@ provider:
 
 functions:
   create:
-    handler: create.main
+    handler: src/create.main
     events:
       - http:
         path: notes
