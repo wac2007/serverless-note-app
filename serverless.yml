@@ -54,3 +54,11 @@ functions:
           cors: true
           authorizer: aws_iam
         
+  list:
+    handler: src/list.main
+    events:
+      - http:
+          path: notes
+          method: get
+          cors: true
+          authorizer: aws_iam
