@@ -1,7 +1,7 @@
 import uuid from "uuid";
 import AWS from "aws-sdk";
 
-import * as dynamoLib from './libs/dynamodb-lib';
+import * as dynamoDb from './libs/dynamodb-lib';
 import { success, failure } from './libs/response-lib';
 
 export async function main(event, context) {
